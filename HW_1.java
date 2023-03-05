@@ -78,30 +78,58 @@
 // Треугольное число 1 + 2 + 3 + 4 + 5 = 15
 // n! 1 * 2 * 3 * 4 * 5 = 120
 
-import java.util.Scanner;
+// import java.util.Scanner;
 
-public class HW_1 {
-    public static void main(String[] args) {
-        Scanner n = new Scanner(System.in);
-        System.out.println("Введите число: ");
-        int num = n.nextInt();
-        n.close();
+// public class HW_1 {
+//     public static void main(String[] args) {
+//         Scanner n = new Scanner(System.in);
+//         System.out.println("Введите число: ");
+//         int num = n.nextInt();
+//         n.close();
 
-        int f = 1;
-        for (int i = 1; i <= num; i++)
-            f = f * i;
-        System.out.println("Факториал числа: " + f);
+//         int f = 1;
+//         for (int i = 1; i <= num; i++)
+//             f = f * i;
+//         System.out.println("Факториал числа: " + f);
         
-        int sum = 0;
-        for (int i = 1; i <= num; i++)
-            sum = sum + i;
-            System.out.println("Треугольное числo: " + sum);
-    }
-}
+//         int sum = 0;
+//         for (int i = 1; i <= num; i++)
+//             sum = sum + i;
+//             System.out.println("Треугольное числo: " + sum);
+//     }
+// }
 
 
 
 // ***Вывести все простые числа от 1 до 1000
+
+
+
+import java.util.Scanner;
+
+public class HW_1 {
+   public static void main(String args[]) {		
+	int temp;
+	boolean number = true;
+	Scanner n= new Scanner(System.in);
+	System.out.println("Введите число для проверки:");
+	int num = n.nextInt();
+
+        for (int i = 2; i <= num / 2; i++) {
+           temp = num % i;
+	   if (temp == 0) {
+	      number = false;
+	      break;
+	   }
+	}
+
+	if(number) {
+	   System.out.println("простое число");
+	} else {
+	   System.out.println("составное число");
+        }
+   }
+}
 
 // ***Реализовать простой калькулятор (+ - / *)
 // Ввод числа ->
