@@ -105,36 +105,77 @@
 
 
 
-import java.util.Scanner;
+// import java.util.Scanner;
 
-public class HW_1 {
-   public static void main(String args[]) {		
-	int temp;
-	boolean number = true;
-	Scanner n= new Scanner(System.in);
-	System.out.println("Введите число для проверки:");
-	int num = n.nextInt();
+// public class HW_1 {
+//    public static void main(String args[]) {		
+// 	int temp;
+// 	boolean number = true;
+// 	Scanner n= new Scanner(System.in);
+// 	System.out.println("Введите число для проверки:");
+// 	int num = n.nextInt();
 
-        for (int i = 2; i <= num / 2; i++) {
-           temp = num % i;
-	   if (temp == 0) {
-	      number = false;
-	      break;
-	   }
-	}
+//         for (int i = 2; i <= num / 2; i++) {
+//            temp = num % i;
+// 	   if (temp == 0) {
+// 	      number = false;
+// 	      break;
+// 	   }
+// 	}
 
-	if(number) {
-	   System.out.println("простое число");
-	} else {
-	   System.out.println("составное число");
-        }
-   }
-}
+// 	if(number) {
+// 	   System.out.println("простое число");
+// 	} else {
+// 	   System.out.println("составное число");
+//         }
+//    }
+// }
 
 // ***Реализовать простой калькулятор (+ - / *)
 // Ввод числа ->
 // Ввод знака ->
 // Ввод числа ->
+import java.util.Scanner;
+
+public class HW_1 {
+   public static void main(String args[]) {	
+
+Scanner scan = new Scanner(System.in);
+
+System.out.println("Введите первое число: ");
+int num1 = scan.nextInt();
+
+System.out.println("Введите оператор: (+ или - или * или /) ");
+char operation = scan.next().charAt(0);
+
+System.out.println("Введите второе число: ");
+int num2 = scan.nextInt();
+
+if (!(operation == '+' || operation == '-' || operation == '*' || operation == '/')) {
+    System.err.println("Неверная операция!");}
+
+else if (operation == '/' && num2 == 0) {
+    System.err.println("На ноль делить нельзя!");
+}
+
+switch (operation) {
+    case '+':
+        System.out.println(num1 + " + " + num2 + " = " + (num1 + num2));
+         break;
+    case '-':
+        System.out.println(num1 + " - " + num2 + " = " + (num1 - num2));
+        break;
+    case '*':
+        System.out.println(num1 + " x " + num2 + " = " + (num1 * num2));
+        break;
+    case '/':
+        System.out.println(num1 + " / " + num2 + " = " + (num1 / num2));
+        break;
+        
+    }
+}
+   }
+
 
 // ****(ДОПОЛНИТЕЛЬНАЯ) +Задано уравнение вида q + w = e, q, w, e >= 0.
 // Некоторые цифры могут быть заменены знаком вопроса, например 2? + ?5 = 69 (пользователь).
